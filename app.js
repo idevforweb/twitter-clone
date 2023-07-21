@@ -1,9 +1,10 @@
-//  Set up
+//  Set up express
 
 const express = require('express');
 const app = express();
 const port = 3000;
-const middleware = require('./middleware');
+
+const middleware = require('./middleware'); // Require middleware.js
 
 // Run server
 
@@ -11,13 +12,14 @@ const server = app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
 
-// Set View Engine
-// Tell server where to look for pug files
+app.set('view engine', 'pug'); // Set View Engine
+app.set('views', 'views'); // Tell server where to look for pug files
 
-app.set('view engine', 'pug');
-app.set('views', 'views');
+const loginRoute = require('./routes/loginRoutes'); // Add routes to app
 
-// Route with middleware
+app.use('/login', loginRoute); // Use login routes
+
+// Home route
 app.get('/', middleware.requireLogin, (req, res, next) => {
   let payload = {
     pageTitle: 'home',
