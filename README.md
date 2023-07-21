@@ -17,3 +17,10 @@ Create Views folder
 create home.pug in views
 Create layouts folder in views
 Create main-layout.pug in layouts
+
+# Registration Log in
+
+Create middleware.js in root folder
+Using middleware.js create widdleware.requireLogin
+Require middleware in app.js
+add middleware to home route in app.js
