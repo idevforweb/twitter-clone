@@ -8,15 +8,16 @@ In .gitignore add "node_modules/\*" to ignore module folder
 
 # Installing express
 
-touch app.js"
+In root dir > touch app.js"
 npm install express
 
 # Create Pug Templating
 
 Set View Engine to pug
 npm i pug
-Run server
-Tell server where to look for pug file
+Run npm start, to start server
+Set view engine
+Tell server where to look for pug file in app.js
 Create Views folder in root dir
 create home.pug in views root dir
 Create layouts dir in views roots dir
@@ -37,6 +38,13 @@ touch loginRoutes.js
 set up loginRoutes.js ( see code )
 In app.js add Routes
 Tell app to us loginRoutes
+
+# Create login page
+
+In views dir > touch login.pug
+In views/layouts dir > touch login-layout.pug
+In login.pug extend login-layout.pug
+See login.pug and login-layout.pug for steps
 
 ## Notes
 

@@ -2,6 +2,9 @@
 
 const express = require('express');
 const app = express();
+
+// create router instance
+
 const router = express.Router();
 
 // Set View Engine
@@ -10,10 +13,10 @@ const router = express.Router();
 app.set('view engine', 'pug');
 app.set('views', 'views');
 
-// Route with middleware
-
 router.get('/', (req, res, next) => {
   res.status(200).render('login');
 });
+
+// export router module
 
 module.exports = router;
