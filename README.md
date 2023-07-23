@@ -59,4 +59,4 @@
 - touch login.css
 - app.js > add require path library
 - app.js > app path to public folder
-- login-layout.pug > link login.css
+- login-layout.pug > link stylesheet login.css or any other doc needed
