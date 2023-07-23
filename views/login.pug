@@ -1,7 +1,7 @@
 extends layouts/login-layout.pug 
 block content 
   .loginContainer 
-    h1 Login 
+    h1 #{loginPageTitle} 
     form(method="post")
       input(type="text", name="logUsername", placeholder="Username or Email", required="") 
       input(type="password", name="logUPassword", placeholder="Password", required="")

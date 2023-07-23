@@ -3,41 +3,40 @@
 - Run "npm init"
 - Add start script in package.json
 - Run "git init"
-- In root dir touch .gitignore
-- In .gitignore add "node_modules/\*" to ignore module folder
+- In root dir > touch .gitignore
+- In .gitignore > add "node_modules/\*" to ignore module folder
 
 # Installing express
 
 - In root dir > touch app.js"
-- npm express
+- In Terminal > npm i express
+- Set up express
+- Set up server
 
 # Create Pug Templating
 
-- Set View Engine to pug
-- npm i pug
-- Run npm start, to start server
-- Set view engine
-- Tell server where to look for pug file in app.js
-- Create views folder in root dir
-- create home.pug in views root dir
-- Create layouts dir in views roots dir
-- Create main-layout.pug in layouts dir
+- Terminal > npm i pug
+- In app.js set view engine to pug
+- In app.js set views folder : Tell server where to look for pug file in app.js
+- cd root > mkdir views
+- cd views dir > home.pug && mkdir layouts
+- cd views/layouts > touch main-layout.pug
 
-# Create Log in middleware
+# Create Log in middlewaren module
 
-- touch middleware.js in root dir
+- cd root > touch middleware.js
 - In middleware.js create widdleware.requireLogin()
 - Require middleware.js module in app.js
-- Add middleware to home route in app.js
 
 # Add login route
 
-- In project root dir > mkdir routes
+- cd root dir > mkdir routes
 - cd routes
 - touch loginRoutes.js
 - set up loginRoutes.js ( see code )
-- In app.js add loginRoutes instance
-- Tell app to use loginRoutes
+- In app.js add loginRoute instance
+- In app.js Tell app to use loginRoutes
+- In app.js add requireLogin module middleware to home route in app.js
 
 # Create login page and layout
 

@@ -13,8 +13,14 @@ const router = express.Router();
 app.set('view engine', 'pug');
 app.set('views', 'views');
 
+// Payloads
+
+const payLoads = {
+  loginPageTitle: 'Login',
+};
+
 router.get('/', (req, res, next) => {
-  res.status(200).render('login');
+  res.status(200).render('login', payLoads);
 });
 
 // export router module
