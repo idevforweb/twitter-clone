@@ -3,7 +3,7 @@
 // requireLogin module
 
 exports.requireLogin = (req, res, next) => {
-  // if registered user grant access to route
+  // if registered user is user, grant access to route
   if (req.session && req.session.user) {
     return next();
   } else {
