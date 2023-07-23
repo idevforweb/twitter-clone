@@ -1,6 +1,7 @@
 # Setting up project
 
 - Run "npm init"
+- npm i nodemon
 - Add start script in package.json
 - Run "git init"
 - In root dir > touch .gitignore
@@ -44,3 +45,9 @@
 - In views/layouts dir > touch login-layout.pug
 - In login.pug extend login-layout.pug
 - See login.pug and login-layout.pug for steps
+
+# Add Bootstrap and jQuery
+
+- Get Bootstrap and jQuery CDN's
+- Add links to main-layout.pug and login-layout.pug
+- Add scripts to main-layout.pug and login-layout.pug

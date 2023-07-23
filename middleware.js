@@ -1,8 +1,4 @@
-/*
-
-middleware modules
-
- */
+/* middleware modules */
 
 // requireLogin module
 
