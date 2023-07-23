@@ -12,14 +12,15 @@ const server = app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
 
-app.set('view engine', 'pug'); // Set View Engine
+app.set('view engine', 'pug'); // Set View Engine to pug
 app.set('views', 'views'); // Tell server where to look for pug files
 
-const loginRoute = require('./routes/loginRoutes'); // Add routes to app
+const loginRoute = require('./routes/loginRoutes'); // Add loginRoutes to app
 
 app.use('/login', loginRoute); // Use login routes
 
 // Home route
+
 app.get('/', middleware.requireLogin, (req, res, next) => {
   let payload = {
     pageTitle: 'home',
