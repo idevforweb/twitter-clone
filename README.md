@@ -39,12 +39,12 @@ set up loginRoutes.js ( see code )
 In app.js add Routes
 Tell app to us loginRoutes
 
-# Create login page
+# Create login page and layout
 
-In views dir > touch login.pug
-In views/layouts dir > touch login-layout.pug
-In login.pug extend login-layout.pug
-See login.pug and login-layout.pug for steps
+- In views dir > touch login.pug
+- In views/layouts dir > touch login-layout.pug
+- In login.pug extend login-layout.pug
+- See login.pug and login-layout.pug for steps
 
 ## Notes
 
