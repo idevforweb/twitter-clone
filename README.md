@@ -1,6 +1,7 @@
 # Setting up project
 
 - Run "npm init"
+- Make entry point app.js
 - npm i nodemon
 - Add start script in package.json
 - Run "git init"
@@ -23,7 +24,7 @@
 - cd views dir > home.pug && mkdir layouts
 - cd views/layouts > touch main-layout.pug
 
-# Create Log in middlewaren module
+# Create Log in middleware module
 
 - cd root > touch middleware.js
 - In middleware.js create widdleware.requireLogin()
@@ -51,3 +52,11 @@
 - Get Bootstrap and jQuery CDN's
 - Add links to main-layout.pug and login-layout.pug
 - Add scripts to main-layout.pug and login-layout.pug
+
+# Serving Static files
+
+- cd root > mkdir public > cd public > mkdir css
+- touch login.css
+- app.js > add require path library
+- app.js > app path to public folder
+- login-layout.pug > link login.css

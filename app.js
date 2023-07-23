@@ -16,6 +16,14 @@ const server = app.listen(port, () => {
 app.set('view engine', 'pug');
 app.set('views', 'views');
 
+/* Serving Static files */
+
+// Require path library
+// Add path to public folder
+
+const path = require('path');
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Middleware
 // Require middleware module
 
