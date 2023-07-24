@@ -14,10 +14,12 @@
 - In Terminal > npm i express
 - app.js > Set up express
 - app.js > Set up server
-  '''
+
+```
   Set up express
   Set up Server
-  '''
+
+```
 
 # Create Pug Templating
 
