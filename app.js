@@ -10,6 +10,12 @@ const server = app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
 
+// Require body parser libray
+// Tell app to use body parser
+
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: false }));
+
 // Set view engine to pug
 // Set views folder : Tell server where to look for pug files
 

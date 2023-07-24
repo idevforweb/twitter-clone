@@ -90,3 +90,15 @@
 
 - register.pug > add js script or use external js script for form validation
 - See register.pug for code
+
+# Add body parser
+
+- npm i body-parser
+- registRoutes.js > require body-parser library
+- app.js > require body-parser library
+- registRoutes.js > Tell app to use body parser
+- app.js > Tell app to use body parser
+
+# todo
+
+- learn about body parser for node.js
