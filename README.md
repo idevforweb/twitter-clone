@@ -15,12 +15,6 @@
 - app.js > Set up express
 - app.js > Set up server
 
-```
-  Set up express
-  Set up Server
-
-```
-
 # Create Pug Templating
 
 - Terminal > npm i pug
@@ -80,4 +74,4 @@
 
 # Style login page
 
-- Style login page
+- Style login.pug page
