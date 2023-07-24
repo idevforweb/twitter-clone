@@ -60,3 +60,18 @@
 - app.js > add require path library
 - app.js > app path to public folder
 - login-layout.pug > link stylesheet login.css or any other doc needed
+
+# Adding css
+
+- npm start
+- In browser navigate to desired page
+- Open up developer tools
+- Select Sources > Ctrl + P
+- From list select desired page and edit css to view in real time
+- Or choose "Element" > select element tag > edit in panel
+- Make CSS styles ( have fun )
+- copy paste to project CSS file
+
+# Style login page
+
+- Style login page
