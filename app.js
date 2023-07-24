@@ -29,11 +29,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 const middleware = require('./middleware');
 
-// Add loginRoute instance
-// Tell app to use login route
+// Reruire Router Instances
 
-const loginRoute = require('./routes/loginRoutes');
-app.use('/login', loginRoute);
+const loginRoute = require('./routes/loginRoutes'); // Add loginRoute instance
+const registerRoute = require('./routes/registerRoutes'); // Add registerRoute instance
+
+// Use routes
+
+app.use('/login', loginRoute); // Tell app to use login route
+app.use('/register', registerRoute); // Tell app to use register route
 
 // Home route
 

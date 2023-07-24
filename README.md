@@ -75,3 +75,13 @@
 # Style login page
 
 - Style login.pug page
+
+# Create register page and register route
+
+- root dir > cd views
+- touch register.pug
+- register.pug > Create register form ( see code )
+- routes dir > touch registerRoutes.js
+- Add code to registerRoutes.js ( see code )
+- app.js > Add registerRouter instance
+- app.js > Tell app to use register route instance
