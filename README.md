@@ -85,3 +85,8 @@
 - Add code to registerRoutes.js ( see code )
 - app.js > Add registerRouter instance
 - app.js > Tell app to use register route instance
+
+# Add password field form validation
+
+- register.pug > add js script or use external js script for form validation
+- See register.pug for code

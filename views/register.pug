@@ -2,13 +2,35 @@ extends layouts/login-layout.pug
 block content 
   .loginContainer 
     h1 Register
-    form(method="post")
-      input(type="text", name="firstName", placeholder="First Name", required="") 
+    //- form with onsubmit event handler 
+    //- preventDafault will stop a defualt submit 
+    //- and run validateForm instead 
+    form#registerForm(method="post", onsubmit="event.preventDefault(); validateForm();")
+      input(type="text", name="firstName", placeholder="First Name", required="", autofocus) 
       input(type="text", name="lastName", placeholder="Last Name", required="") 
       input(type="text", name="username", placeholder="Username", required="") 
-      input(type="email", name="email", placeholder="Email", required="") 
-      input(type="password", name="password", placeholder="Create Password", required="") 
-      input(type="password", name="passwordConfirm", placeholder="Confirm Password", required="") 
+      input(type="email", name="email", placeholder="Email", required="")
+      //- input with # give id to an element in .pug files 4 
+      input#password(type="password", name="password", placeholder="Create Password", required="") 
+      input#passwordConf(type="password", name="passwordConf", placeholder="Confirm Password", required="") 
       input(type="submit", value="Login")
     a(href="/login") Already have an account? Login here.
   
+  //- script. adds a script file to a pug doc 
+  script.
+    // Variables
+    const 
+    passwordField = document.getElementById('password'),
+    passwordFieldConfirm = document.getElementById('passwordConf'),
+    form = document.getElementById('registerForm');
+    
+    //- Password form field validation
+
+    function validateForm() {
+      if(passwordField.value != passwordFieldConfirm.value) {
+        alert("Passwords do not match. Please try again.")
+      } 
+      else {
+        form.submit();
+      };
+    };
