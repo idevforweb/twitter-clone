@@ -10,10 +10,14 @@
 
 # Installing express
 
-- In root dir > touch app.js"
+- In root dir > touch app.js if not created
 - In Terminal > npm i express
-- Set up express
-- Set up server
+- app.js > Set up express
+- app.js > Set up server
+  '''
+  Set up express
+  Set up Server
+  '''
 
 # Create Pug Templating
 
