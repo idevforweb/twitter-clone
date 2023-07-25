@@ -30,9 +30,27 @@ router.get('/', (req, res, next) => {
 // Add Register Post request
 
 router.post('/', (req, res, next) => {
-  // Test out body parser gather info
-  console.log(req.body);
-  res.status(200).render('register');
+  const // Add body parser in to variables
+
+    firstName = req.body.firstName.trim(),
+    lastName = req.body.lastName.trim(),
+    username = req.body.username.trim(),
+    email = req.body.email.trim(),
+    password = req.body.password;
+
+  // Add request body to a payload
+
+  const payload = req.body;
+
+  // Check for empty fields using server side validation
+
+  if (firstName && lastName && username && email && password) {
+    // Check if all fields are true and valid
+    console.log(payload);
+  } else {
+    payload.errorMessage = 'Make sure each field has a valid value.';
+    res.status(200).render('register', payload);
+  }
 });
 
 // export router module

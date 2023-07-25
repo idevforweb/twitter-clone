@@ -99,6 +99,15 @@
 - registRoutes.js > Tell app to use body parser
 - app.js > Tell app to use body parser
 
+# Check for empty fields
+
+- registerRouter.js > get.post route > Add body parser variables
+- registerRouter.js > get.post route > Add req.body to a payload
+- registerRouter.js > get.post route > Check for empty fields using server side validation
+- ( See if-block in registerRouter.js)
+- register.js > Add values to specific input fields ( see file for notes )
+- regiser.js > Add payload.errorMessage p element with class of .errorMessage
+
 # todo
 
 - learn about body parser for node.js
