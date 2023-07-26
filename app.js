@@ -4,6 +4,24 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+// Require Mongoose
+// Test: Add connection String
+// Connect mongo db mongoose
+
+const mongoose = require('mongoose');
+const connectionString =
+  'mongodb+srv://kalibAdmin:Knb060315!@cluster0.hh9duqu.mongodb.net/?retryWrites=true&w=majority';
+mongoose
+  .connect(connectionString)
+  .then(() => {
+    // if db connection successfull
+    console.log('Database connected.');
+  })
+  .catch((err) => {
+    // if db connection unsuccessfull
+    console.log(`Database connection error ${err}`);
+  });
+
 // Set up server
 
 const server = app.listen(port, () => {

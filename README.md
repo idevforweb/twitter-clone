@@ -108,6 +108,20 @@
 - register.js > Add values to specific input fields ( see file for notes )
 - regiser.js > Add payload.errorMessage p element with class of .errorMessage
 
+# Set up MongoDB
+
+- Mongodb.com > Create project
+- Create Cluster
+
+# Connect to Database
+
+- Go thru basic Database user set up
+- root dir > npm i mongodb mongoose
+- Get connection string from mongodb.com driver
+- app.js > Require mongoose
+- app.js > Test: Add connection String ( this will be env in final dev )
+- app.js > Connect mongodb thru mongoose instance
+
 # todo
 
 - learn about body parser for node.js

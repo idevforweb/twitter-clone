@@ -31,7 +31,7 @@ router.get('/', (req, res, next) => {
 
 router.post('/', (req, res, next) => {
   const // Add body parser in to variables
-
+    // Trim will remove any white spaces before or after value
     firstName = req.body.firstName.trim(),
     lastName = req.body.lastName.trim(),
     username = req.body.username.trim(),
