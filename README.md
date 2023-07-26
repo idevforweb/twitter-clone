@@ -143,9 +143,14 @@
 
 # Inserting a user into the collection
 
-- registration.js >
+- registerRoutes.js >
 - Get all fields user entered
 - Use mongoDB create method ( returns promise )
+
+# Adding timestamps to our data
+
+- UserSchema.js >
+- Set Schema Time Stamp option
 
 # todo
 

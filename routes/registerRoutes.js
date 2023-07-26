@@ -74,7 +74,8 @@ router.post('/', async (req, res, next) => {
           console.log(addedUser);
         })
         .catch((error) => {
-          console.log(error);
+          payload.errorMessage = 'Sorry an unexpected error occured.';
+          res.status(200).render('register', payload);
         });
     } else {
       // User found
