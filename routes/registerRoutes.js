@@ -34,8 +34,8 @@ router.get('/', (req, res, next) => {
 // Add Register Post request
 // Add async to router.post
 router.post('/', async (req, res, next) => {
-  const // Add body parser in to variables
-    // Note: Trim will remove any white spaces before or after value
+  // Add body parsed variables for validation checking
+  const // Note: Trim will remove any white spaces before or after value
     firstName = req.body.firstName.trim(),
     lastName = req.body.lastName.trim(),
     username = req.body.username.trim(),
@@ -63,10 +63,19 @@ router.post('/', async (req, res, next) => {
       res.status(200).render('register', payload);
     });
 
-    // Add conditions if user is already in use
+    // Add conditions if user is already in use or not
 
     if (user == null) {
-      // No user found
+      // If no user is found create one
+      const userData = req.body; // Get all fields user entered
+      // Use mongoDB create method ( returns promise )
+      await User.create(userData)
+        .then((addedUser) => {
+          console.log(addedUser);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     } else {
       // User found
       if (email == user.email) {

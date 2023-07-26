@@ -101,7 +101,7 @@
 
 # Check for empty fields
 
-- registerRouter.js > get.post route > Add body parser variables
+- registerRouter.js > get.post route > Add body parsed variables for validation checking
 - registerRouter.js > get.post route > Add req.body to a payload
 - registerRouter.js > get.post route > Check for empty fields using server side validation
 - ( See if-block in registerRouter.js)
@@ -140,6 +140,12 @@
 - Check usernames or emails using User Schema and mongoDB $or condition ( see code )
 - Add async to router.post
 - Add conditions if user is already in use
+
+# Inserting a user into the collection
+
+- registration.js >
+- Get all fields user entered
+- Use mongoDB create method ( returns promise )
 
 # todo
 
