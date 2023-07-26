@@ -7,6 +7,10 @@ const app = express();
 
 const bodyParser = require('body-parser');
 
+// Require UserSchema for use
+
+const User = require('../schemas/UserSchema');
+
 // create router instance
 
 const router = express.Router();
@@ -46,6 +50,7 @@ router.post('/', (req, res, next) => {
 
   if (firstName && lastName && username && email && password) {
     // Check if all fields are true and valid
+    //
     console.log(payload);
   } else {
     payload.errorMessage = 'Make sure each field has a valid value.';

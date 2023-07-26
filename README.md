@@ -130,6 +130,10 @@
 - UserSchema.js > require mongoose
 - ( See UserSchema.js for code )
 
+# Add UserSchema in registerRoute.js
+
+- registerRoutes.js > Require UserSchema for use
+
 # todo
 
 - learn about body parser for node.js
