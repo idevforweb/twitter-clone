@@ -45,7 +45,7 @@
 - In views dir > touch login.pug
 - In views/layouts dir > touch login-layout.pug
 - In login.pug extend login-layout.pug
-- See login.pug and login-layout.pug for steps
+- See login.pug and login-layout.pug for set up
 
 # Add Bootstrap and jQuery
 
@@ -108,19 +108,19 @@
 - register.js > Add values to specific input fields ( see file for notes )
 - regiser.js > Add payload.errorMessage p element with class of .errorMessage
 
-# Set up MongoDB
+# Set up MongoDB Database
 
 - Mongodb.com > Create project
 - Create Cluster
-
-# Connect to Database
-
-- Go thru basic Database user set up
+- Go thru basic Database set up
 - root dir > npm i mongodb mongoose
-- Get connection string from mongodb.com driver
-- app.js > Require mongoose
-- app.js > Test: Add connection String ( this will be env in final dev )
-- app.js > Connect mongodb thru mongoose instance
+
+# Create reusable database connection
+
+- root dir > touch database.js
+- database.js > Require mongoose library
+- database.js > Create Database class (see file for class build)
+- app.js > Require database module
 
 # todo
 
