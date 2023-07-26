@@ -134,6 +134,13 @@
 
 - registerRoutes.js > Require UserSchema for use
 
+# Check if username or emails are already in use
+
+- registerRoutes.js >
+- Check usernames or emails using User Schema and mongoDB $or condition ( see code )
+- Add async to router.post
+- Add conditions if user is already in use
+
 # todo
 
 - learn about body parser for node.js

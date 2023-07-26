@@ -32,10 +32,10 @@ router.get('/', (req, res, next) => {
 });
 
 // Add Register Post request
-
-router.post('/', (req, res, next) => {
+// Add async to router.post
+router.post('/', async (req, res, next) => {
   const // Add body parser in to variables
-    // Trim will remove any white spaces before or after value
+    // Note: Trim will remove any white spaces before or after value
     firstName = req.body.firstName.trim(),
     lastName = req.body.lastName.trim(),
     username = req.body.username.trim(),
@@ -47,12 +47,44 @@ router.post('/', (req, res, next) => {
   const payload = req.body;
 
   // Check for empty fields using server side validation
+  // Check if all fields are true and valid
 
   if (firstName && lastName && username && email && password) {
-    // Check if all fields are true and valid
-    //
-    console.log(payload);
+    // Check usernames or emails using User Schema and mongoDB $or condition
+    // Note: using await, code will wait for query to finish and not continue
+
+    let user = await User.findOne({
+      $or: [{ username: username }, { email: email }],
+    }).catch((error) => {
+      // Add catch error
+      console.log(error);
+      // Append error messages to payload
+      payload.errorMessage = 'Make sure each field has a valid value.';
+      res.status(200).render('register', payload);
+    });
+
+    // Add conditions if user is already in use
+
+    if (user == null) {
+      // No user found
+    } else {
+      // User found
+      if (email == user.email) {
+        // if email submitted is found in database.
+        // append error message to payload
+        payload.errorMessage = 'User already in use.';
+      } else {
+        // if username submitted is found in database.
+        // append error message to payload
+        payload.errorMessage = 'User already in use.';
+      }
+
+      // Render new payload
+      res.status(200).render('register', payload);
+    }
   } else {
+    // Append error message to payload
+
     payload.errorMessage = 'Make sure each field has a valid value.';
     res.status(200).render('register', payload);
   }
