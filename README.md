@@ -122,6 +122,14 @@
 - database.js > Create Database class (see file for class build)
 - app.js > Require database module
 
+# Create User Schema Mongoose
+
+- root dir > mkdir schemas && cd schemas
+- schemas dir > touch UserSchema.js
+- Note: Create one schema per collection
+- UserSchema.js > require mongoose
+- ( See UserSchema.js for code )
+
 # todo
 
 - learn about body parser for node.js
