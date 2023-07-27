@@ -7,6 +7,10 @@ const app = express();
 
 const bodyParser = require('body-parser');
 
+// Require bcrypt
+
+const bcrypt = require('bcrypt');
+
 // Require UserSchema for use
 
 const User = require('../schemas/UserSchema');
@@ -33,6 +37,7 @@ router.get('/', (req, res, next) => {
 
 // Add Register Post request
 // Add async to router.post
+
 router.post('/', async (req, res, next) => {
   // Add body parsed variables for validation checking
   const // Note: Trim will remove any white spaces before or after value
@@ -68,13 +73,21 @@ router.post('/', async (req, res, next) => {
     if (user == null) {
       // If no user is found create one
       const userData = req.body; // Get all fields user entered
+
+      // Add bcrypt to hash password
+      // bcrypt takes two parameters (password, number)
+      // we use 10 for high hash security, higher the number more security
+
+      userData.password = await bcrypt.hash(password, 10);
+
       // Use mongoDB create method ( returns promise )
+
       await User.create(userData)
         .then((addedUser) => {
           console.log(addedUser);
         })
         .catch((error) => {
-          payload.errorMessage = 'Sorry an unexpected error occured.';
+          payload.errorMessage = `Sorry an unexpected error occured. ${error}`;
           res.status(200).render('register', payload);
         });
     } else {

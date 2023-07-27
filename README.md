@@ -152,6 +152,9 @@
 - UserSchema.js >
 - Set Schema Time Stamp option
 
-# todo
+# Hash the password using bcrypt
 
-- learn about body parser for node.js
+- root dir > npm i bcrypt
+- registerRoutes.js >
+- Require bcrypt
+- Add bcrypt to hash password
