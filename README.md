@@ -158,3 +158,17 @@
 - registerRoutes.js >
 - Require bcrypt
 - Add bcrypt to hash password
+
+# Creating Sessions
+
+- npm i express-session
+- app.js >
+- Require express-session
+- Set app to use sessions
+- registerRoutes.js >
+- Store logged in user in the session property
+- Redirect user to home page or root level of the site
+
+# Passing Logged in user to the client
+
+- app.js > home route > update payload >

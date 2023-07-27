@@ -8,6 +8,6 @@ exports.requireLogin = (req, res, next) => {
     return next();
   } else {
     // redirect to login
-    return res.redirect('./login');
+    return res.redirect('/login');
   }
 };

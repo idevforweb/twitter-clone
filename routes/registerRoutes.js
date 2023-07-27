@@ -1,35 +1,17 @@
 //  required modules
+const express = require('express'); // Require express
+const app = express(); // create Express app
+const router = express.Router(); // create router instance
+const bodyParser = require('body-parser'); // Require body parser libray
+const bcrypt = require('bcrypt'); // Require bcrypt
+const User = require('../schemas/UserSchema'); // Require UserSchema for use
 
-const express = require('express');
-const app = express();
+app.set('view engine', 'pug'); // Set View Engine
+app.set('views', 'views'); // Tell server where to look for pug files
 
-// Require body parser libray
+app.use(bodyParser.urlencoded({ extended: false })); // Tell app to use body parser
 
-const bodyParser = require('body-parser');
-
-// Require bcrypt
-
-const bcrypt = require('bcrypt');
-
-// Require UserSchema for use
-
-const User = require('../schemas/UserSchema');
-
-// create router instance
-
-const router = express.Router();
-
-// Set View Engine
-// Tell server where to look for pug files
-
-app.set('view engine', 'pug');
-app.set('views', 'views');
-
-// Tell app to use body parser
-
-app.use(bodyParser.urlencoded({ extended: false }));
-
-// Add Register get request
+// Add Register main route
 
 router.get('/', (req, res, next) => {
   res.status(200).render('register');
@@ -40,25 +22,23 @@ router.get('/', (req, res, next) => {
 
 router.post('/', async (req, res, next) => {
   // Add body parsed variables for validation checking
-  const // Note: Trim will remove any white spaces before or after value
-    firstName = req.body.firstName.trim(),
-    lastName = req.body.lastName.trim(),
-    username = req.body.username.trim(),
-    email = req.body.email.trim(),
-    password = req.body.password;
+  const firstName = req.body.firstName.trim(); // Trim : remove white spaces
+  const lastName = req.body.lastName.trim();
+  const username = req.body.username.trim();
+  const email = req.body.email.trim();
+  const password = req.body.password;
 
   // Add request body to a payload
 
-  const payload = req.body;
+  let payload = req.body;
 
   // Check for empty fields using server side validation
   // Check if all fields are true and valid
 
   if (firstName && lastName && username && email && password) {
-    // Check usernames or emails using User Schema and mongoDB $or condition
-    // Note: using await, code will wait for query to finish and not continue
-
     let user = await User.findOne({
+      // Check usernames or emails using User Schema and mongoDB $or condition
+      // Note: using await, code will wait for query to finish and not continue
       $or: [{ username: username }, { email: email }],
     }).catch((error) => {
       // Add catch error
@@ -72,10 +52,10 @@ router.post('/', async (req, res, next) => {
 
     if (user == null) {
       // If no user is found create one
-      const userData = req.body; // Get all fields user entered
+      let userData = req.body; // Get all fields user entered
 
       // Add bcrypt to hash password
-      // bcrypt takes two parameters (password, number)
+      // bcrypt takes two parameters (password to hash, encryption level)
       // we use 10 for high hash security, higher the number more security
 
       userData.password = await bcrypt.hash(password, 10);
@@ -83,10 +63,14 @@ router.post('/', async (req, res, next) => {
       // Use mongoDB create method ( returns promise )
 
       await User.create(userData)
-        .then((addedUser) => {
-          console.log(addedUser);
+        .then((user) => {
+          // Store logged in user in the session property
+          req.session.user = user;
+          // Redirect User to home page
+          return res.redirect('/');
         })
         .catch((error) => {
+          console.log(error);
           payload.errorMessage = `Sorry an unexpected error occured. ${error}`;
           res.status(200).render('register', payload);
         });
