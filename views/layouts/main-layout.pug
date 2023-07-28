@@ -11,10 +11,18 @@ html(lang="en")
       crossorigin="anonymous"
     )
     title #{pageTitle}
-  body 
-    
-    //- Add block content
-    block content
+  body
+    //- Create layout using Bootstrap grid
+    .wrapper
+      .row
+        nav.col-2.col-md-5
+          span Navbar
+          //- Dev note: adding multiple columns using pug
+        .mainSectionContainer.col-8.col-md-5          
+          //- Add block Content
+          block content
+        .col-2
+          span third column
 
     //- Add CDN scripts
     script(

@@ -176,3 +176,4 @@
 # Logging in
 
 - loginRoutes.js > Update loginRoute.js > See Code
+- login.pug > see code
