@@ -171,4 +171,8 @@
 
 # Passing Logged in user to the client
 
-- app.js > home route > update payload >
+- app.js > home route > update payload > Get the session user data from registerRoutes.js
+
+# Logging in
+
+- loginRoutes.js > Update loginRoute.js > See Code

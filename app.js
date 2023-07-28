@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, 'public'))); // Add path to public f
 app.use(
   session({
     // Secrets are used to hash sessions
-    secret: 'this is a secret session',
+    secret: 'this is a secret session can be anything',
     resave: true,
     saveUninitialized: false,
   })
@@ -49,6 +49,7 @@ app.get('/', middleware.requireLogin, (req, res, next) => {
   // home.pug template properties
   let payload = {
     pageTitle: 'home',
+    // Get the session user data from registerRoutes.js
     userLoggedIn: req.session.user,
   };
   res.status(200).render('home', payload);

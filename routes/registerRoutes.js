@@ -11,7 +11,7 @@ app.set('views', 'views'); // Tell server where to look for pug files
 
 app.use(bodyParser.urlencoded({ extended: false })); // Tell app to use body parser
 
-// Add Register main route
+// Add Register main route : Get Request
 
 router.get('/', (req, res, next) => {
   res.status(200).render('register');
@@ -64,10 +64,8 @@ router.post('/', async (req, res, next) => {
 
       await User.create(userData)
         .then((user) => {
-          // Store logged in user in the session property
-          req.session.user = user;
-          // Redirect User to home page
-          return res.redirect('/');
+          req.session.user = user; // Store registered user in the session
+          return res.redirect('/'); // Redirect User redirect user
         })
         .catch((error) => {
           console.log(error);
