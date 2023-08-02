@@ -19,3 +19,7 @@
 
 - Fontawesome.com > search for nav icons to use
 - main-layout.pug > add icons to nav ( see code )
+
+# Style Nav
+
+- main.css > Add nav styles
