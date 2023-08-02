@@ -12,7 +12,9 @@ html(lang="en")
     )
     //-  Link Dev Css
     link(rel="stylesheet", href="/css/main.css")
+    //- Link fontawesome
     title #{pageTitle}
+
   body
     //- Create layout using Bootstrap grid
     .wrapper
@@ -21,14 +23,17 @@ html(lang="en")
         nav.col-2
           span Navbar
           //- Dev note: adding multiple columns using pug
-          //- responsive layout > container will take up 10 cols then shrink to 8 cols on medium screens
-        .mainSectionContainer.col-10.col-md-8
+          //- responsive layout > container will take up 10 cols then shrink to 8 cols on medium screens and 6 cols on large
+        .mainSectionContainer.col-10.col-md-8.col-lg-6
           //- Add block Content
           block content
         //- class d-none will hide third column  ( display none )
-        //- Responsive layout > d-md-clock - on medium size screens or above third column will display as block item at 2 cols
-        .d-none.d-md-block.col-md-2
+        //- Responsive layout > d-md-clock - on medium size screens or above third column will display as block item at 2 cols and 4 cols on large
+        .d-none.d-md-block.col-md-2.col-lg-4
           span third column
+
+    //-  Add Fontawesome
+    script(src="https://kit.fontawesome.com/04ab076c9b.js", crossorigin="anonymous")
 
     //- Add CDN scripts
     script(
