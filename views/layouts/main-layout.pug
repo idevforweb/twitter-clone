@@ -10,18 +10,24 @@ html(lang="en")
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM", 
       crossorigin="anonymous"
     )
+    //-  Link Dev Css
+    link(rel="stylesheet", href="/css/main.css")
     title #{pageTitle}
   body
     //- Create layout using Bootstrap grid
     .wrapper
       .row
-        nav.col-2.col-md-5
+        //- responsive layout >  nav will stay at col width
+        nav.col-2
           span Navbar
           //- Dev note: adding multiple columns using pug
-        .mainSectionContainer.col-8.col-md-5          
+          //- responsive layout > container will take up 10 cols then shrink to 8 cols on medium screens
+        .mainSectionContainer.col-10.col-md-8
           //- Add block Content
           block content
-        .col-2
+        //- class d-none will hide third column  ( display none )
+        //- Responsive layout > d-md-clock - on medium size screens or above third column will display as block item at 2 cols
+        .d-none.d-md-block.col-md-2
           span third column
 
     //- Add CDN scripts
