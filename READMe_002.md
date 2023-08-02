@@ -14,3 +14,8 @@
 - Create account if needed and follow steps at fontawesome.com
 - get link from FA
 - main-layout.pug > add FA links
+
+# Add Nav icons
+
+- Fontawesome.com > search for nav icons to use
+- main-layout.pug > add icons to nav ( see code )

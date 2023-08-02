@@ -21,7 +21,24 @@ html(lang="en")
       .row
         //- responsive layout >  nav will stay at col width
         nav.col-2
-          span Navbar
+          //- Adding Nav icons
+          //- a: link set up
+          //- i: Fontawesome classes
+          a(href="/")
+            i.fa-solid.fa-dove
+          a(href="/")
+            i.fa-solid.fa-house
+          a(href="/search")
+            i.fa-solid.fa-magnifying-glass         
+          a(href="/notifications")
+            i.fa-solid.fa-bell      
+          a(href="/messages")
+            i.fa-solid.fa-envelope          
+          a(href="/profile")
+            i.fa-solid.fa-user          
+          a(href="/logout")
+            i.fa-solid.fa-right-from-bracket          
+
           //- Dev note: adding multiple columns using pug
           //- responsive layout > container will take up 10 cols then shrink to 8 cols on medium screens and 6 cols on large
         .mainSectionContainer.col-10.col-md-8.col-lg-6
