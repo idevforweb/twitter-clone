@@ -2,6 +2,14 @@
 :root {
   --blue: #1fa2f1;
   --backgroundColorBG: #d4edff;
+  --lightGrey: rgb(230, 236, 240);
+  --spacing: 15px;
+}
+
+h1 {
+  font-size: 19px;
+  font-weight: 600;
+  margin: 0px;
 }
 
 /* nav links */
@@ -44,9 +52,23 @@ nav a:hover {
 }
 
 .mainSectionContainer {
-  background-color: blue;
+  padding: 0px;
+  border-left: 1px solid var(--lightGrey);
+  border-right: 1px solid var(--lightGrey);
+  display: flex;
+  flex-direction: column;
 }
 
-.mainSectionContainer {
-  background-color: blue;
+.titleContainer {
+  height: 53px;
+  padding: 0 var(--spacing);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--lightGrey);
+  /* for safari - address edge casing */
+  flex-shrink: 0;
+}
+
+.titleContainer {
+  /* flex: 1; */
 }

@@ -29,7 +29,7 @@ html(lang="en")
           a(href="/")
             i.fa-solid.fa-house
           a(href="/search")
-            i.fa-solid.fa-magnifying-glass         
+            i.fa-solid.fa-magnifying-glass
           a(href="/notifications")
             i.fa-solid.fa-bell      
           a(href="/messages")
@@ -42,6 +42,9 @@ html(lang="en")
           //- Dev note: adding multiple columns using pug
           //- responsive layout > container will take up 10 cols then shrink to 8 cols on medium screens and 6 cols on large
         .mainSectionContainer.col-10.col-md-8.col-lg-6
+          //- Add page title 
+          .titleContainer 
+            h1 #{pageTitle}
           //- Add block Content
           block content
         //- class d-none will hide third column  ( display none )

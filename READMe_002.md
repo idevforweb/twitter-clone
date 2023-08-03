@@ -24,10 +24,15 @@
 
 - main.css > Add nav styles
 
-# Set up Log out
+# Set up Logout
 
 - /routes > touch logoutRoute.js
 - logoutRoute.js > ( see code )
 - app.js >
 - Add logoutRoute instance
 - Tell app to use logoutRoute instance
+
+# Set up Page titles
+
+- main-layout.pug > ( see code )
+- main.css > add css for main title ( see code for reference )

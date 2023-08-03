@@ -50,7 +50,7 @@ app.use('/logout', logoutRoute); // Tell app to use logout route
 app.get('/', middleware.requireLogin, (req, res, next) => {
   // home.pug template properties
   let payload = {
-    pageTitle: 'home',
+    pageTitle: 'Home',
     // Get the session user data from registerRoutes.js
     userLoggedIn: req.session.user,
   };
