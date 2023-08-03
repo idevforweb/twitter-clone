@@ -1,3 +1,19 @@
+/* Create css variables */
+:root {
+  --blue: #1fa2f1;
+  --backgroundColorBG: #d4edff;
+}
+
+/* nav links */
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: inherit;
+}
+
+/*  nav container */
 nav {
   display: flex;
   flex-direction: column;
@@ -5,6 +21,7 @@ nav {
   height: 100%;
 }
 
+/*  nav links positioning  */
 nav a {
   display: flex;
   align-items: center;
@@ -14,6 +31,16 @@ nav a {
   width: 55px;
   height: 55px;
   text-decoration: none;
+}
+
+nav a.logo {
+  color: var(--blue);
+}
+
+nav a:hover {
+  background-color: var(--backgroundColorBG);
+  color: var(--blue);
+  border-radius: 50%;
 }
 
 .mainSectionContainer {
