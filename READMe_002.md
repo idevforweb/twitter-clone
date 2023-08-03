@@ -23,3 +23,11 @@
 # Style Nav
 
 - main.css > Add nav styles
+
+# Set up Log out
+
+- /routes > touch logoutRoute.js
+- logoutRoute.js > ( see code )
+- app.js >
+- Add logoutRoute instance
+- Tell app to use logoutRoute instance

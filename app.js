@@ -37,11 +37,13 @@ app.use(
 
 const loginRoute = require('./routes/loginRoutes'); // Add loginRoute instance
 const registerRoute = require('./routes/registerRoutes'); // Add registerRoute instance
+const logoutRoute = require('./routes/logoutRoute'); // Add logoutRoute instance
 
 // Use routes
 
 app.use('/login', loginRoute); // Tell app to use login route
 app.use('/register', registerRoute); // Tell app to use register route
+app.use('/logout', logoutRoute); // Tell app to use logout route
 
 // Home route
 
