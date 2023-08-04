@@ -1,0 +1,13 @@
+//- mixins are rusable blocks of pug code 
+
+//- Dev Notes: userlogged is session object 
+ 
+mixin createPostForm(userLoggedIn)
+  .postFormContainer
+    .userImageContainer
+      img(src=userLoggedIn.profilePic, alt="User's profile pic")
+    .textareaContainer
+      textarea#post(placeholder="What's happening?")
+      .buttonsContainer
+        button#submitPostButton(disabled="") Post 
+

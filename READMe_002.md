@@ -36,3 +36,5 @@
 
 - main-layout.pug > ( see code )
 - main.css > add css for main title ( see code for reference )
+
+# Next steps Creating post form
