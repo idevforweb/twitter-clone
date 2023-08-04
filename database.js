@@ -2,6 +2,14 @@
 
 const mongoose = require('mongoose');
 
+// Test: Add connection String
+
+const connectionString =
+  'mongodb+srv://kalibAdmin:Knb060315!@cluster0.hh9duqu.mongodb.net/?retryWrites=true&w=majority';
+
+const localConnectionString =
+  'mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.10.1';
+
 // Create Database class
 
 class Database {
@@ -14,15 +22,10 @@ class Database {
   // Create connect method
 
   connect() {
-    // Test: Add connection String
-
-    const connectionString =
-      'mongodb+srv://kalibAdmin:Knb060315!@cluster0.hh9duqu.mongodb.net/?retryWrites=true&w=majority';
-
     // Connect mongodb thru mongoose
 
     mongoose
-      .connect(connectionString)
+      .connect(localConnectionString)
       .then(() => {
         // if db connection successfull
         console.log('Database connected.');
