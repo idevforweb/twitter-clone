@@ -21,6 +21,7 @@ app.use(bodyParser.urlencoded({ extended: false })); // Tell app to use body par
 /* Serving Static files */
 
 app.use(express.static(path.join(__dirname, 'public'))); // Add path to public folder
+app.use(express.static(path.join(__dirname, 'node_modules/bootstrap/dist/'))); // Bootstrap
 
 // Set app to use sessions
 
