@@ -22,6 +22,16 @@ app.use(bodyParser.urlencoded({ extended: false })); // Tell app to use body par
 
 app.use(express.static(path.join(__dirname, 'public'))); // Add path to public folder
 app.use(express.static(path.join(__dirname, 'node_modules/bootstrap/dist/'))); // Bootstrap
+// Add Fontawesome path
+app.use(
+  express.static(
+    path.join(__dirname, 'node_modules/@fortawesome/fontawesome-free')
+  )
+);
+app.use(express.static(path.join(__dirname, 'node_modules/jquery/dist'))); // Add jquery path
+app.use(
+  express.static(path.join(__dirname, 'node_modules/bootstrap-icons/font'))
+); // Add BS-icons path
 
 // Set app to use sessions
 

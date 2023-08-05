@@ -8,7 +8,7 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     //- Add Bootstrap
     link(rel="stylesheet", type="text/css", href="/css/bootstrap.min.css")
-    //-  Link Dev Css
+     //-  Link Dev Css
     link(rel="stylesheet", href="/css/main.css")
     //- Link fontawesome
     title #{pageTitle}
@@ -24,6 +24,7 @@ html(lang="en")
           //- i: Fontawesome classes
           a.logo(href="/")
             i.fa-solid.fa-dove
+            //- i.bi-alarm
           a(href="/")
             i.fa-solid.fa-house
           a(href="/search")
@@ -50,9 +51,7 @@ html(lang="en")
         .d-none.d-md-block.col-md-2.col-lg-4
           span third column
 
-    //-  Add Fontawesome
-    script(src="https://kit.fontawesome.com/04ab076c9b.js", crossorigin="anonymous")
-
-    //- Add CDN scripts
+    //- Add Bootstap and fontawsome scripts
     script(src="/js/bootstrap.js")
+    script(src="/js/all.js")
 
