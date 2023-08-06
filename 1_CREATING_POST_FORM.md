@@ -20,3 +20,7 @@
 - /js > touch common.js
 - main-layout.pug > add common.js
 - coommon.js > ( see code )
+
+# Enableling the post button when user types
+
+- common.js > ( see code )
