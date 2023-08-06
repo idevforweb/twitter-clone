@@ -9,3 +9,7 @@
 
 - /public > mkdir images
 - /images > add default profile pic image
+
+# Styling the post container
+
+- /main.css > ( see code )
