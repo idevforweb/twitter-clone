@@ -6,7 +6,10 @@
   --lightGrey: rgb(230, 236, 240);
   --spacing: 15px;
 }
-
+* {
+  /* Outline for tabbed navigation representation */
+  outline
+}
 h1 {
   font-size: 19px;
   font-weight: 600;
