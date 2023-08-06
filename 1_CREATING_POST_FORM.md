@@ -4,3 +4,8 @@
 - mixins.pug > create mixins
 - main-layout.pug > include mixins
 - home.pug > add mixins
+
+# Add defualt profile picture
+
+- /public > mkdir images
+- /images > add default profile pic image

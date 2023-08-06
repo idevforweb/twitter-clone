@@ -42,7 +42,7 @@ const UserSchema = new Schema(
       type: String,
       required: true,
       // Create defualt profile pic
-      default: 'img/profilePic.png',
+      default: 'imgages/profilePic.png',
     },
   },
 
