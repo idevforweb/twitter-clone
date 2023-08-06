@@ -16,7 +16,7 @@ postTextArea.onkeyup = function (onKeyupEvent) {
   if (submitButton.length == 0) alert('No submit button');
   // If textarea is blank or only spaces
   if (textAreaContent === '') {
-    // if user post nothing set submit button disabled to true
+    // set submit button disabled to true
     submitButton.setAttribute('disabled', true);
     submitButton.style.backgroundColor = '#9bd1f9';
     return;

@@ -123,3 +123,7 @@ nav a:hover {
   border-radius: 40px;
   padding: 5px 10px;
 }
+/* when button is disabled  */
+#submitPostButton:disabled {
+  background-color: var(--blueLight);
+}
