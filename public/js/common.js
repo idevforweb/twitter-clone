@@ -9,9 +9,6 @@ const submitButton = document.querySelector('#submitPostButton');
 // target is textarea#postTextArea
 // value is user input
 
-// Appending a paragraph tag to the body - jquery test
-// $('body').append('<p>Is a cool Website</p>');
-
 // On key up event handler
 
 postTextArea.onkeyup = function (onKeyupEvent) {
@@ -38,11 +35,9 @@ submitButton.addEventListener('click', (onClickEvent) => {
   data = {
     content: postTextArea.value,
   };
-  // const xhttp = new XMLHttpRequest();
-  // xhttp.onload = () => {
-  // console.log(data);
-  // };
-  // xhttp.open('GET', '/', true);
-  // xhttp.send();
-  $.post('/api/post', data, (postData, statusCode, xhr) => {});
+  // Redirect using jquery
+  $.post('/api/posts', data, (postData, statusCode, xhr) => {});
 });
+
+// Appending a paragraph tag to the body - jquery testing
+// $('body').append('<p>Is a cool Website</p>');
