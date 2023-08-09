@@ -36,7 +36,9 @@ submitButton.addEventListener('click', (onClickEvent) => {
     content: postTextArea.value,
   };
   // Redirect using jquery
-  $.post('/api/posts', data, (postData, statusCode, xhr) => {});
+  $.post('/api/posts', data, (postData, statusCode, xhr) => {
+    alert(postData);
+  });
 });
 
 // Appending a paragraph tag to the body - jquery testing
