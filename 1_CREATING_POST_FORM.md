@@ -4,7 +4,7 @@
 - mixins.pug > create mixins
 - home.pug > add mixins
 
-# Add defualt profile picture
+# Add default profile picture
 
 - /public > mkdir images
 - /images > add default profile pic image
@@ -24,3 +24,7 @@
 # Enableling the post button when user types
 
 - common.js > ( see code )
+
+# Adding a click handler to post button
+
+- common.js >

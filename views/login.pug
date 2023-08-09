@@ -5,7 +5,7 @@ block content
     form(method="post")
       p.errorMessage #{errorMessage}
       //- adding the value in the inputs : if value is set, it will add them back in the input field
-      input(type="text", name="logUsername", placeholder="Username or Email", value=logUsername, required="", autofocus) 
+      input(type="text", name="logUsername", placeholder="Username or Email", value=logUsername, required="", autofocus, autocomplete="on") 
       input(type="password", name="logPassword", placeholder="Password", required="")
       input(type="submit", value="Login")
     a(href="/register") Need and account? Register here.

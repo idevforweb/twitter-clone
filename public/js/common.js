@@ -9,19 +9,40 @@ const submitButton = document.querySelector('#submitPostButton');
 // target is textarea#postTextArea
 // value is user input
 
+// Appending a paragraph tag to the body - jquery test
+// $('body').append('<p>Is a cool Website</p>');
+
+// On key up event handler
+
 postTextArea.onkeyup = function (onKeyupEvent) {
-  // get postTextArea user inputed value
-  const textAreaContent = onKeyupEvent.target.value.trim();
-  //  if there is no button
-  if (submitButton.length == 0) alert('No submit button');
+  const textAreaContent = onKeyupEvent.target.value.trim(); // get postTextArea value trimmed
+  if (submitButton.length == 0) alert('No submit button'); // if there is no button
   // If textarea is blank or only spaces
-  if (textAreaContent === '') {
-    // set submit button disabled to true
-    submitButton.setAttribute('disabled', true);
+  if (textAreaContent == '') {
+    submitButton.setAttribute('disabled', true); // disable submit button
     submitButton.style.backgroundColor = '#9bd1f9';
+    console.log('Nothing typed');
     return;
+  } else {
+    // if user post something
+    submitButton.removeAttribute('disabled');
+    submitButton.style.backgroundColor = '#1fa2f1';
+    console.log('Updated');
   }
-  // if user post something
-  submitButton.setAttribute('disabled', false);
-  submitButton.style.backgroundColor = '#1fa2f1';
 };
+
+// data: collected that will be sent to server
+
+submitButton.addEventListener('click', (onClickEvent) => {
+  let button = onClickEvent.target;
+  data = {
+    content: postTextArea.value,
+  };
+  // const xhttp = new XMLHttpRequest();
+  // xhttp.onload = () => {
+  // console.log(data);
+  // };
+  // xhttp.open('GET', '/', true);
+  // xhttp.send();
+  $.post('/api/post', data, (postData, statusCode, xhr) => {});
+});
