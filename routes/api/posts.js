@@ -8,6 +8,7 @@ app.use(bodyParser.urlencoded({ extended: false })); // Tell app to use body par
 
 router.get('/', (req, res, next) => {});
 
+// url that will post
 router.post('/', async (req, res, next) => {
   res.status(200).send('It worked!');
 });

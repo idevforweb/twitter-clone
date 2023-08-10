@@ -35,7 +35,7 @@ submitButton.addEventListener('click', (onClickEvent) => {
   data = {
     content: postTextArea.value,
   };
-  // Redirect using jquery
+  // Redirect to api/post using jquery:
   $.post('/api/posts', data, (postData, statusCode, xhr) => {
     alert(postData);
   });
