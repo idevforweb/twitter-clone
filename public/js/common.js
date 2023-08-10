@@ -32,10 +32,11 @@ postTextArea.onkeyup = function (onKeyupEvent) {
 
 submitButton.addEventListener('click', (onClickEvent) => {
   let button = onClickEvent.target;
+  // Capture data from postTextArea
   data = {
     content: postTextArea.value,
   };
-  // Redirect to api/post using jquery:
+  // post content data to api/post endpoint using jquery:
   $.post('/api/posts', data, (postData, statusCode, xhr) => {
     alert(postData);
   });
